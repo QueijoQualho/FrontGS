@@ -18,11 +18,15 @@ router.get('/tipounidades', async (req, res) => {
 
       res.json(options);
     } else {
-      res.status(500).json({ error: 'Resposta da API não possui a estrutura esperada.' });
+      res.status(500).json({
+        error: 'Resposta da API não possui a estrutura esperada.'
+      });
     }
   } catch (error) {
     console.error('Erro na requisição:', error);
-    res.status(500).json({ error: 'Erro na requisição.' });
+    res.status(500).json({
+      error: 'Erro na requisição.'
+    });
   }
 });
 
@@ -33,10 +37,14 @@ router.get('/estabelecimentos', async (req, res) => {
     const codMunicipio = req.query.codMunicipio || 0;
 
     const data = await buscarEstabelecimentos(codUnidade, codEstado, codMunicipio);
-    res.json({ data });
+    res.json({
+      data
+    });
   } catch (error) {
     console.error('Erro na requisição:', error.message);
-    res.status(500).json({ error: 'Erro na requisição.' });
+    res.status(500).json({
+      error: 'Erro na requisição.'
+    });
   }
 });
 
