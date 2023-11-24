@@ -26,41 +26,51 @@ router.get('/tipounidades', async (req, res) => {
   }
 });
 
-
 router.get('/estabelecimentos', async (req, res) => {
-    const data = fetchEstabeleciomentos()
-})
+  try {
+    const codUnidade = req.query.codUnidade;
+    const codEstado = req.query.codEstado;
+    const codMunicipio = req.query.codMunicipio || 0;
 
-async function fetchEstabeleciomentos(codUnidade, codEstado, codMunicipio = 0) {
-  const urlDefault = "https://apidadosabertos.saude.gov.br/cnes/estabelecimentos"
+    const data = await buscarEstabelecimentos(codUnidade, codEstado, codMunicipio);
+    res.json({ data });
+  } catch (error) {
+    console.error('Erro na requisição:', error.message);
+    res.status(500).json({ error: 'Erro na requisição.' });
+  }
+});
+
+async function buscarEstabelecimentos(codUnidade, codEstado, codMunicipio) {
+  const urlPadrao = "https://apidadosabertos.saude.gov.br/cnes/estabelecimentos";
 
   let urlApi;
 
   if (codMunicipio !== 0) {
-    urlApi = `${urlDefault}/?codigo_tipo_unidade=${codUnidade}&codigo_uf=${codEstado}&limit=20`
+    urlApi = `${urlPadrao}?codigo_tipo_unidade=${codUnidade}&codigo_uf=${codEstado}&codigo_municipio=${codMunicipio}&limit=20`;
   } else {
-    urlApi = `${urlDefault}/?codigo_tipo_unidade=${codUnidade}&codigo_uf=${codEstado}&codigo_municipio=${codMunicipio}&limit=20`
+    urlApi = `${urlPadrao}?codigo_tipo_unidade=${codUnidade}&codigo_uf=${codEstado}&limit=20`;
   }
+
+  console.log(urlApi);
 
   try {
-    const response = await axios.get(urlApi);
-    const data = response.data;
+    const resposta = await axios.get(urlApi);
+    const dados = resposta.data;
 
-    if (data.estabelecimentos !== null) {
-      const options = data.estabelecimentos.map(e => {
-        nome: e.nome_fantasia
-
-      })
-
-      return options;
+    if (dados.estabelecimentos !== null) {
+      const opcoes = dados.estabelecimentos.map(e => ({
+        nome: e.nome_fantasia,
+        cep: e.codigo_cep_estabelecimento
+      }));
+      return opcoes;
     } else {
-      return null;
+      throw new Error('Dados da API estão nulos.');
     }
-
-  } catch (error) {
-    console.error('Erro na requisição:', error);
-    res.status(500).json({ error: 'Erro na requisição.' });
+  } catch (erro) {
+    console.error('Erro na requisição:', erro.message);
+    throw new Error('Erro na requisição.');
   }
 }
+
 
 export default router;
