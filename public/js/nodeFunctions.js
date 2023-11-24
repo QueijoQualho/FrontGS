@@ -40,7 +40,8 @@ export async function gerarResultados(codUnidade, codEstado, codMunicipio = 0) {
         urlApi = `${urlDefault}?codUnidade=${codUnidade}&codEstado=${codEstado}`;
     }
 
-
+    console.log(urlApi);
+    
     try {
         const response = await fetch(urlApi);
 
