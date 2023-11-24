@@ -9,7 +9,7 @@ export async function pegarMunicipio(estadoID) {
 
         data.forEach(e => {
             const option = document.createElement('option')
-            option.value = e.id
+            option.value = Math.floor(e.id / 10)
             option.text = e.nome
 
             selectMunicipio.appendChild(option)
