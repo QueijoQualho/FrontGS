@@ -4,65 +4,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Global Solution</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <label for="unidade">Escolha a unidade:</label>
-    <select name="unidade" id="unidade">
-    </select>
 
-    <label for="estados">Escolha um estado:</label>
-    <select id="estados" name="estados">
-        <option value="0">--</option>
-    </select>
-    <br>
+    <header>
+        <h1 class="titulo">Health Spotter</h1>
+    </header>
 
-    <label for="municipio">Escolha o municipio:</label>
-    <select id="municipio" name="municipio">
-        <option value="0">--</option>
-    </select>
+    <div id="chatbot">Suporte</div>
 
-    <div id="results" class="results">
+    <section class="objetivo">
+        <h2 id="obj">Viemos para te ajudar a encontrar
+            os locais relacionados a saúde mais próximo de você!</h2> <img id="image1"
+            src="https://img.freepik.com/fotos-gratis/saude-natureza-morta-com-espaco-de-copia_23-2148854031.jpg?size=626&ext=jpg&ga=GA1.1.1826414947.1699142400&semt=ais">
+    </section>
 
-    </div>
+    <!--Local da API-->
+    <section class="principal">
+        <h2 class="subtitulo">Encontre serviços de saúde próximos:</h2>
+        <label for="unidade">Escolha a unidade:
+            <select name="unidade" id="unidade">
+            </select>
+        </label>
+
+        <label for="estados">Escolha um estado:
+            <select id="estados" name="estados">
+                <option value="0">--</option>
+            </select>
+        </label>
+
+        <label for="municipio">Escolha o municipio:
+            <select id="municipio" name="municipio">
+                <option value="0">--</option>
+            </select>
+        </label>
+    </section>
+
+    <section class="resultado">
+        <h2 class="subtitulo">
+            Locais encontrados:
+        </h2>
+
+        <div id="results" class="results">
+
+        </div>
+    </section>
+
+
+
+    <footer>
+        <p class="nome">
+            Eduardo Shiraga
+            <br>
+            RM553705
+        </p>
+
+        <p class="nome">
+            Giovani Borba
+            <br>
+            RM553724
+        </p>
+
+        <p class="nome">
+            Pedro Jesus
+            <br>
+            RM553912
+        </p>
+
+        <p id="detalhes">
+            <a id="grupo" href="equipe.html">
+                Conheça nossa equipe >
+            </a>
+
+        </p>
+    </footer>
 
     <script type="module" src="./js/script.js"></script>
-
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-
-        label {
-            font-size: 1.2em;
-            margin-bottom: 8px;
-            color: #333;
-        }
-
-        select {
-            padding: 8px;
-            font-size: 1em;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            width: 200px;
-            margin-bottom: 16px;
-        }
-
-        .results {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin: 10px;
-        }
-    </style>
 </body>
 
 </html>
