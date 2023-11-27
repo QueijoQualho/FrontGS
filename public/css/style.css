@@ -15,6 +15,10 @@ header {
 
 }
 
+select{
+    width: 100%;
+}
+
 .titulo {
     color: rgb(45, 129, 239);
     margin-left: 30px;
