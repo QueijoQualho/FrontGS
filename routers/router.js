@@ -63,14 +63,20 @@ async function buscarEstabelecimentos(codUnidade, codEstado, codMunicipio) {
 
   try {
     const resposta = await axios.get(urlApi);
-    const dados = resposta.data;
+    const data = resposta.data;
 
-    if (dados.estabelecimentos !== null) {
-      const opcoes = dados.estabelecimentos.map(e => ({
+    if (data.estabelecimentos !== null) {
+      const dados = data.estabelecimentos.map(e => ({
         nome: e.nome_fantasia,
-        cep: e.codigo_cep_estabelecimento
+        endereco: e.endereco_estabelecimento,
+        numero: e.numero_estabelecimento,
+        bairo: e.bairro_estabelecimento,
+        cep: e.codigo_cep_estabelecimento,
+        telefone: e.numero_telefone_estabelecimento,
+        email: e.endereco_email_estabelecimento
+
       }));
-      return opcoes;
+      return dados;
     } else {
       throw new Error('Dados da API estão nulos.');
     }
