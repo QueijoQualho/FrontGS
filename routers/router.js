@@ -59,8 +59,6 @@ async function buscarEstabelecimentos(codUnidade, codEstado, codMunicipio) {
     urlApi = `${urlPadrao}?codigo_tipo_unidade=${codUnidade}&codigo_uf=${codEstado}&limit=20`;
   }
 
-  console.log(urlApi);
-
   try {
     const resposta = await axios.get(urlApi);
     const data = resposta.data;
@@ -70,7 +68,7 @@ async function buscarEstabelecimentos(codUnidade, codEstado, codMunicipio) {
         nome: e.nome_fantasia,
         endereco: e.endereco_estabelecimento,
         numero: e.numero_estabelecimento,
-        bairo: e.bairro_estabelecimento,
+        bairro: e.bairro_estabelecimento,
         cep: e.codigo_cep_estabelecimento,
         telefone: e.numero_telefone_estabelecimento,
         email: e.endereco_email_estabelecimento
