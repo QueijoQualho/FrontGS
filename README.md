@@ -36,6 +36,6 @@ Você pode acessar o site diretamente [aqui](https://test-uowx.onrender.com) par
 A aplicação utiliza a API de dados abertos do governo brasileiro para obter informações sobre tipos de unidades de saúde e estabelecimentos. A documentação da API pode ser encontrada [aqui](https://apidadosabertos.saude.gov.br/v1/#/).
 
 ## Equipe
-Eduardo Shiraga (RM553705)
-Giovani Borba (RM553724)
-Pedro Jesus (RM553912)
+- Eduardo Shiraga (RM553705)
+- Giovani Borba (RM553724)
+- Pedro Jesus (RM553912)
