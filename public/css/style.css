@@ -250,6 +250,10 @@ footer {
     .nome {
         font-size: 11px;
     }
+
+    .titulo{
+        margin-left: 0px; 
+    }
 }
 
 
