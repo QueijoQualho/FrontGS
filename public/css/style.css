@@ -102,6 +102,7 @@ p {
 
 .nome {
     text-align: center;
+    padding: 10px;
 }
 
 .card{
@@ -165,7 +166,7 @@ footer {
     transition: 0.5s;
 }
 
-/*Arrumar a imagem*/
+
 
 @media screen and (max-width:1050px) {
 
@@ -247,11 +248,11 @@ footer {
     }
 
     .nome {
-        font-size: 14px;
+        font-size: 11px;
     }
 }
 
-/*Erro no HEADER quando abaixo de 468*/
+
 
 @media screen and (max-width: 470px) {
     header {
@@ -263,6 +264,10 @@ footer {
     #obj {
         width: 100%;
         font-size: 14px;
+    }
+
+    #results {
+        font-size: 12px;
     }
 
 }
