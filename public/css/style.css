@@ -165,20 +165,6 @@ footer {
     transition: 0.5s;
 }
 
-#chatbot {
-    background-color: rgb(45, 129, 239);
-    color: white;
-    font-size: 14px;
-    font-weight: bolder;
-    border-radius: 20%;
-    right: 0;
-    top: 0;
-    margin: 5px;
-    padding: 8px;
-    position: fixed;
-}
-
-
 /*Arrumar a imagem*/
 
 @media screen and (max-width:1050px) {
@@ -279,9 +265,4 @@ footer {
         font-size: 14px;
     }
 
-    #chatbot {
-        font-size: 10px;
-        padding: 3px;
-
-    }
 }

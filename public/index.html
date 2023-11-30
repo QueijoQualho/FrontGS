@@ -14,8 +14,6 @@
         <h1 class="titulo">Health Spotter</h1>
     </header>
 
-    <div id="chatbot">Suporte</div>
-
     <section class="objetivo">
         <h2 id="obj">Viemos para te ajudar a encontrar
             os locais relacionados a saúde mais próximo de você!</h2> <img id="image1"
@@ -78,6 +76,21 @@
     </footer>
 
     <script type="module" src="./js/script.js"></script>
+
+    <!-- CHATBOT -->
+    <script>
+        window.watsonAssistantChatOptions = {
+          integrationID: "83c3b774-1d6e-49bc-872f-79945440e444", // The ID of this integration.
+          region: "us-south", // The region your integration is hosted in.
+          serviceInstanceID: "b97849f6-b107-46bc-a257-ba4ce9ccfeb4", // The ID of your service instance.
+          onLoad: async (instance) => { await instance.render(); }
+        };
+        setTimeout(function(){
+          const t=document.createElement('script');
+          t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+          document.head.appendChild(t);
+        });
+      </script>
 </body>
 
 </html>
