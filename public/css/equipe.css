@@ -92,6 +92,11 @@ footer {
     text-align: center;
 }
 
+a#home:hover {
+    transition: 0.3s;
+    color: rgb(33 45 62);
+    text-decoration: underline;
+}
 @media screen and (max-width:730px) {
 
     .titulo {
