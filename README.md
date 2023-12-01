@@ -11,14 +11,14 @@ Health Spotter é uma aplicação web que permite aos usuários encontrar locais
 1. **Escolha a Unidade:** Selecione o tipo de unidade de saúde desejada no menu suspenso.
 2. **Selecione o Estado e Município:** Escolha o estado desejado e, se necessário, o município para refinar a busca.
 3. **Visualize os Resultados:** Os resultados da pesquisa serão exibidos abaixo, mostrando as informações detalhadas de cada estabelecimento.
-4. **Acesse o Site:** Se você preferir visualizar o site sem precisar instalar o repositório, pode acessar [aqui](https://test-uowx.onrender.com).
+4. **Acesse o Site:** Se você preferir visualizar o site sem precisar instalar o repositório, pode acessar [aqui](https://health-spotter.onrender.com).
 
 ## Configuração do Projeto
 ### Pré-requisitos
 - Node.js e npm instalados
 - Navegador web moderno
 ### Visualização Online
-Você pode acessar o site diretamente [aqui](https://test-uowx.onrender.com) para testar as funcionalidades sem a necessidade de instalar localmente.
+Você pode acessar o site diretamente [aqui](https://health-spotter.onrender.com) para testar as funcionalidades sem a necessidade de instalar localmente.
 ### Instalação
 1. Clone o repositório: git clone https://github.com/seu-usuario/FrontGS.git
 2. Navegue até o diretório do projeto: cd FrontGS
